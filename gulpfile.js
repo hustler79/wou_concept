@@ -4,8 +4,7 @@ const gulp = require('gulp');
 const gg = require('gore-gulp');
 
 const gore = gg({
-  baseDir: __dirname,
-  useAva: true
+  baseDir: __dirname
 });
 
 gore.setup(gulp);
