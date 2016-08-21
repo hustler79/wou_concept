@@ -2,13 +2,13 @@
 
 How to install:
 
-1. Install modules:
+ 1. Install modules:
 ```javascript
 npm install
 ```
-2. Build project:
+ 2. Build project:
 ```javascript
-node build
+gulp build
 ```
 
 JSON response:
