@@ -1,0 +1,18 @@
+.button-margin {
+    margin-bottom: 10px;
+}
+
+.span-input {
+    padding: 7px;
+    border: 1px dashed green;
+}
+
+.paragraf-input {
+    padding: 7px;
+    border: 1px dashed dodgerblue;
+}
+
+h4 {
+    padding: 7px;
+    border: 1px dashed orange;
+}
