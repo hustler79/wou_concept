@@ -1,18 +1,17 @@
 # wou_media
 
-How to install:
-
- 1. Install modules:
+Install modules:
 ```javascript
 npm install
 ```
- 2. Build project:
+
+Build project:
 ```javascript
 gulp build
 ```
 
 JSON response:
-```javascript
+```json
 {"template":"test_template","items":[{"id":0,"title":"First node","value":"Example text 1  %FIELD% "},{"id":1,"title":"Second node","value":"Example test 2 %FIELD% year  %FIELD% "}]}
 ```
 
