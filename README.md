@@ -1,12 +1,12 @@
 # wou_media
 
 Install modules:
-```javascript
+```sh
 npm install
 ```
 
 Build project:
-```javascript
+```sh
 gulp build
 ```
 

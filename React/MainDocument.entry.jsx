@@ -4,7 +4,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { autobind } from 'core-decorators';
 import NodeComponent from 'woumedia/Components/NodeComponent';
-import forEach from 'lodash/forEach';
 
 class MainDocument extends React.Component {
 
@@ -15,18 +14,14 @@ class MainDocument extends React.Component {
       templateName: 'test_template',
       sections: [],
       listElements: [],
-      listSize: 0,
-      JsonValue: '',
+      jsonValue: '',
     };
-  }
-
-  componentDidMount() {
   }
 
   @autobind
   getJson() {
     this.setState({
-      JsonValue: JSON.stringify(
+      jsonValue: JSON.stringify(
         {
           template: this.state.templateName,
           items: this.state.sections,
@@ -37,32 +32,25 @@ class MainDocument extends React.Component {
 
   @autobind
   setSections(section) {
-    const latest = this.state.sections;
+    const currentSections = this.state.sections;
 
-    forEach(latest, (value, key) => {
-      if (key === section.id) {
-        latest[key] = section;
-      }
-    });
+    currentSections[section.id] = section;
 
     this.setState({
-      sections: latest,
+      sections: currentSections,
     });
   }
 
   @autobind
   addNode() {
-    const newObj = {};
-
     this.setState({
       listElements: this.state.listElements.concat(
         <NodeComponent
-          id={this.state.listSize}
+          id={this.state.listElements.length}
           propagateData={this.setSections}
         />
       ),
-      sections: this.state.sections.concat(newObj[this.state.listSize] = {}),
-      listSize: this.state.listSize + 1,
+      sections: this.state.listElements.concat({ [this.state.listElements.length]: {} }),
     });
   }
 
@@ -101,7 +89,7 @@ class MainDocument extends React.Component {
               <textarea
                 className="form-control"
                 rows="5"
-                value={this.state.JsonValue}
+                value={this.state.jsonValue}
               />
             </div>
           </div>

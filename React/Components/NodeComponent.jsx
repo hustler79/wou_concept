@@ -18,9 +18,6 @@ export default class NodeComponent extends React.Component {
     };
   }
 
-  componentDidMount() {
-  }
-
   @autobind
   handleTitleChange(event) {
     this.setState({
